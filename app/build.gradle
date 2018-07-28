@@ -1,0 +1,85 @@
+apply plugin: 'com.android.application'
+
+
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+    defaultConfig {
+        applicationId "io.bakan.Vplayer"
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0b"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        renderscriptTargetApi 21
+        renderscriptSupportModeEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            versionNameSuffix "_debug"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testImplementation 'junit:junit:4.12'
+
+   implementation 'com.android.support:appcompat-v7:25.3.1'
+   implementation 'com.android.support:recyclerview-v7:25.3.1'
+   implementation 'com.android.support:cardview-v7:25.3.1'
+   implementation 'com.android.support:palette-v7:25.3.1'
+   implementation 'com.android.support:design:25.3.1'
+
+
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'io.reactivex:rxjava:1.1.6'
+
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+
+    implementation 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor  'com.jakewharton:butterknife-compiler:8.4.0'
+    //retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.3.0'
+    //materialicon
+    implementation 'net.steamcrafted:materialiconlib:1.1.1'
+    //leakcanary
+//    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
+//    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+//    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    //stetho
+//    compile 'com.facebook.stetho:stetho:1.4.1'
+//    compile 'com.facebook.stetho:stetho-okhttp3:1.4.1'
+    //dagger2
+    implementation 'com.google.dagger:dagger:2.0'
+    annotationProcessor  'com.google.dagger:dagger-compiler:2.0'
+    compileOnly 'org.glassfish:javax.annotation:10.0-b28'
+    //materialdialogs
+    implementation 'com.afollestad.material-dialogs:core:0.9.1.0'
+    //imageloader
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
+    //slidinguppanel
+    implementation 'com.sothree.slidinguppanel:library:3.3.1'
+    //app theme engine
+    implementation('com.github.naman14:app-theme-engine:0.5.2@aar') {
+        transitive = true
+    }
+
+
+    implementation 'co.ronash.android:pushe-base:1.4.0'
+    implementation 'com.google.android.gms:play-services-gcm:15.0.1'
+    implementation 'com.google.android.gms:play-services-location:15.0.1'
+
+}
